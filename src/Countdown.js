@@ -11,7 +11,7 @@ export default function Countdown() {
   const [minutes, setMinutes] = useState(time);
   const [seconds, setSeconds] = useState(initialSeconds);
   const [reset, setReset] = useState(false);
-  const [playPause, setPlayPuase] = useState(false);
+  const [playPause, setPlayPuase] = useState(true);
 
   const handleMinutes = (e) => {
     e.preventDefault();
@@ -24,6 +24,7 @@ export default function Countdown() {
 
   const handleReset = debounce(() => {
     setReset(true);
+    setPlayPuase(true);
     setMinutes(time);
     setSeconds(initialSeconds);
   }, 100)
@@ -77,8 +78,9 @@ export default function Countdown() {
         }
       </div>) : (<h1>{'Please enter new time'}</h1>)}
       <div>
-        <button onClick={handlePlay} className='counterButton'>Play</button>
+        <button onClick={handlePlay} className='counterButton'>Start</button>
         <button onClick={handlePause} className='counterButton'>Pause</button>
+        <button onClick={handlePlay} className='counterButton'>Continue</button>
         <button onClick={handleReset} className='counterButton'>Reset</button>
       </div>
     </div>
