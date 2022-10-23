@@ -1,7 +1,6 @@
 import React, { useRef } from 'react'
 import { useState, useEffect } from 'react';
 import { debounce } from "lodash";
-
 import "./index.css"
 
 export default function Countdown() {
@@ -78,10 +77,10 @@ export default function Countdown() {
         }
       </div>) : (<h1>{'Please enter new time'}</h1>)}
       <div>
-        <button onClick={handlePlay} className='counterButton'>Start</button>
-        <button onClick={handlePause} className='counterButton'>Pause</button>
-        <button onClick={handlePlay} className='counterButton'>Continue</button>
-        <button onClick={handleReset} className='counterButton'>Reset</button>
+        <button onClick={handlePlay} className='counterButton'>{'Start'}</button>
+        <button onClick={handlePause} className='counterButton'>{'Pause'}</button>
+        <button onClick={handlePlay} className='counterButton'>{'Continue'}</button>
+        <button onClick={handleReset} className='counterButton'>{'Reset'}</button>
       </div>
     </div>
   )
